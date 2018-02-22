@@ -8,6 +8,7 @@ use DateTime;
 use IteratorAggregate;
 use KHerGe\Arrays\AnyKey;
 use KHerGe\Arrays\AnyKeyIterator;
+use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -86,6 +87,17 @@ class AnyKeyTest extends TestCase
         unset($array[null]);
 
         self::assertFalse(isset($array[null]), 'The key must not exist.');
+    }
+
+    /**
+     * Verify that an exception is thrown if accessing an unused key.
+     */
+    public function testAccessWithUnusedKeyThrowsException()
+    {
+        $this->expectException(OutOfBoundsException::class);
+        $this->expectExceptionMessage('Undefined index: \'test\'');
+
+        $test = $this->array['test'];
     }
 
     /**
