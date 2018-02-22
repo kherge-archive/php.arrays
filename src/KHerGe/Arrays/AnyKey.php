@@ -30,10 +30,11 @@ use Serializable;
  * Array keys are used as is and are strictly matched, there is no type conversion.
  *
  * ```
- * $array['1'] = 'This is one key.';
  * $array[1] = 'This is a different.';
  * $array[1.23] = 'Also a different key.';
  * ```
+ *
+ * > Unfortunately, string numbers such as `"1"` are still cast as numbers. This is probably a limitation with PHP.
  *
  * Other arrays and objects can be used to access the array.
  *
