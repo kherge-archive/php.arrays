@@ -30,6 +30,12 @@
         }
     },
 
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        }
+    },
+
     "require": {
         "kherge/exception": "^1.0"
     },
