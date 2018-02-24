@@ -15,7 +15,7 @@ use ArrayAccess;
  *
  * @author Kevin Herrera <kevin@herrera.io>s
  */
-interface ObjectIterable extends ArrayAccess
+interface ObjectIterable
 {
     /**
      * Returns the keys in the array object.
